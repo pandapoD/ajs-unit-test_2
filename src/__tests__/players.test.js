@@ -25,3 +25,17 @@ test('Уровень здоровья должен быть в порядке у
     { name: 'мечник', health: 10 },
   ]);
 });
+
+test('Проверка на ', () => {
+  expect(
+    assessLevelHealth([
+      { name: 'мечник', health: 10 },
+      { name: 'маг', health: 100 },
+      { name: 'лучник', health: 80 },
+    ])
+  ).not.toBe([
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+    { name: 'мечник', health: 10 },
+  ]);
+});
